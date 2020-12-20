@@ -10,8 +10,8 @@ router.post('/register', (req, res) => {
 
  const credentials = req.body;
 
- if (Users.isValid(credentials)) {
-     const rounds = process.env.BCRYPT_ROUNDS || 10;
+ if (credentials.username && credentials.password && credentials.email) {
+     const rounds = process.env.BCRYPT_ROUNDS;
 
      //hash the password
      const hash = bcryptjs.hashSync(credentials.password, parseInt(rounds));
@@ -23,11 +23,11 @@ router.post('/register', (req, res) => {
          res.status(201).json(newUser);
      })
      .catch(error => {
-         res.status(500).json("username taken");
+         res.status(500).json({message: error.message});
      });
 
  } else {
-     res.status(400).json({ message: "Required field(s) Username AND/OR Password missing from req.body"});
+     res.status(400).json({ message: "Required field(s) Username, Password, or Email missing from req.body"});
  }
 });
 
