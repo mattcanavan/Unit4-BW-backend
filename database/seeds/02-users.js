@@ -1,4 +1,5 @@
-const bcryptjs = require('bcryptjs')
+require("dotenv").config();
+const bcryptjs = require('bcryptjs');
 
 const hash = bcryptjs.hashSync(process.env.USER, parseInt(process.env.BCRYPT_ROUNDS));
 
@@ -7,7 +8,7 @@ exports.seed = function(knex) {
         {username: "first",
          password: hash, 
          email: "example@.net",
-         user_type: 1,              //diner
+         user_type_id: 1,              //diner
          current_location_lat: "",
          current_location_long: "",
         },
@@ -15,7 +16,7 @@ exports.seed = function(knex) {
         {username: "second",
          password: hash, 
          email: "example@.net",
-         user_type: 1,              //diner
+         user_type_id: 1,              //diner
          current_location_lat: "",
          current_location_long: "",
         },
@@ -23,7 +24,7 @@ exports.seed = function(knex) {
         {username: "third",
         password: hash, 
         email: "example@.net",
-        user_type: 2,               //operator
+        user_type_id: 2,               //operator
         current_location_lat: "",
         current_location_long: "",
        },
@@ -31,7 +32,7 @@ exports.seed = function(knex) {
        {username: "fourth",
        password: hash, 
        email: "example@.net",
-       user_type: 2,                //operator
+       user_type_id: 2,                //operator
        current_location_lat: "",
        current_location_long: "",
       }
