@@ -20,7 +20,7 @@ async function add(user) {
   return findById(id);
 }
 function findById(id) {
-  return db('users').where({ user_id: id }).first();
+  return db('users').where({ username: id }).first();
 }
 
 /// this is more of a helper function than a model. didnt want to store it in it's own file.
