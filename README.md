@@ -1,51 +1,54 @@
-# Endpoint Documentation
+# API Documentation
+
+## 1️⃣ Getting Started
 
 ### API Base URL 
-`https://unit4-build-week-backend.herokuapp.com`
+`https://unit4-build-week-backend.herokuapp.com/api`
 
-</br>
+### To confirm the API is online...
+Send a GET request to the base URL. No headers or body is required for this test. Success will return status code 200. Failure will return error.  
 
-### Endpoints
+---
+## 2️⃣ Endpoints Overview
 
+### All Endpoints
 | Request | URL | Description | Requires Auth Token |
 |----------|----------|----------|----------|
-|POST | /api/auth/register | register a new user | N |
-|POST | /api/auth/login | login an existing user | N |
+|POST | /auth/register | register a new user | N |
+|POST | /auth/login | login an existing user | N |
 </br>
 
 ### Unfinished Endpoints (subject to change)
 | Request | URL | Description | Requires Auth Token |
 |----------|----------|----------|----------|
-|GET | /api/trucks | get all truck objects | Y |
-|GET | /api/trucks/reviews | get all reviews | Y |
-|GET | /api/trucks/reviews/:id | get reviews by food truck id | Y |
-|POST | /api/trucks/reviews/:id | add new review to db | Y |
-</br>
+|GET | /trucks | get all truck objects | Y |
+|GET | /trucks/reviews | get all reviews | Y |
+|GET | /trucks/reviews/:id | get reviews by food truck id | Y |
+|POST | /trucks/reviews/:id | add new review to db | Y |
 
 ---
+## 3️⃣ Endpoints Details 
 
-**Register New User**
-----
-  Returns json blob about new user.
+### ***-Register New User***
+*Returns json blob about new user.*
 
-* **URL**
+* **URL:**
 
-  *baseURL*/api/auth/register
+  *baseURL*/auth/register
 
 * **Method:**
 
   `POST`
   
-*  **Request Body**
+*  **Request Body:**
  
    ```
    {
        "username": "foodieFan",             #required
        "password": "password123",           #required
        "email": "example@example.net",      #required
-       "user_type_id": "diner",             #optional
-       "current_location_lat": "16.293869", #optional
-       "current_location_long": "26.2199",  #optional
+       "current_location_lat": "16.293869", #optional, defaults to target market if not provided.
+       "current_location_long": "26.2199",  #optional, defaults to target market if not provided.
    }
    ```
 
@@ -58,9 +61,8 @@
     {
         "user_id": 7,
         "username": "foodieFan",
-        "user_type_id": diner,
-        "current_location_lat": "16.293869",    # null if not provided
-        "current_location_long": "26.2199",     # null if not provided
+        "current_location_lat": "16.293869",
+        "current_location_long": "26.2199", 
         "created_at": "2020-12-23 19:56:28",
         "updated_at": "2020-12-23 19:56:28"
     }
@@ -78,19 +80,18 @@
 
 ---
 
-**Login**
-----
-  Returns json blob containing authentication token.
+### ***-Login***
+*Returns json blob containing authentication token.*
 
-* **URL**
+* **URL:**
 
-  *baseURL*/api/auth/login
+  *baseURL*/auth/login
 
 * **Method:**
 
   `POST`
   
-*  **Request Body**
+*  **Request Body:**
  
    ```
    {
