@@ -1,5 +1,4 @@
 // for furture reference https://stackoverflow.com/questions/19085609/trying-to-connect-my-node-js-to-heroku-postgresql-database-following-heroku-pos
-require('dotenv').config();
 
 module.exports = {
   development: {
@@ -19,6 +18,7 @@ module.exports = {
     seeds: {
       directory: './database/seeds',
     },
+    // debug: true
   },
 
   production: {
