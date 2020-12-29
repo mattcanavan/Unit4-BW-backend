@@ -1,5 +1,4 @@
 // for furture reference https://stackoverflow.com/questions/19085609/trying-to-connect-my-node-js-to-heroku-postgresql-database-following-heroku-pos
-const pgConnection = process.env.DATABASE_URL
 
 module.exports = {
   development: {
@@ -23,7 +22,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: pgConnection,
+    connection: process.env.DATABASE_URL,
     pool: {
         min: 2,
         max: 10,
