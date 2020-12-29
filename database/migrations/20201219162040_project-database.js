@@ -11,7 +11,7 @@ exports.up = function(knex) {
           tbl.text('username', 128).notNullable().unique()
           tbl.text('password', 256).notNullable()
           tbl.text('email', 128).notNullable()
-          tbl.integer('user_type_id').unsigned().notNullable().defaultTo("1")   //diner, lowest permissions.
+          tbl.integer('user_type_id').unsigned().notNullable().defaultTo(1)   //diner, lowest permissions.
           .references('user_type_id').inTable('users_types')
           .onDelete('RESTRICT').onUpdate('RESTRICT')
           tbl.decimal('current_location_lat', 128)
