@@ -6,36 +6,32 @@ const hash = bcryptjs.hashSync("this_is_a_fake_password_for_seeding_purposes_onl
 
 exports.seed = function(knex) {
     return knex('users').insert([
-        {username: "first",
+        {username: "fakeUser1",
          password: hash, 
          email: "example@.net",
-         user_type_id: 1,              //diner
-         current_location_lat: 0,
-         current_location_long: 0,
+         current_location_lat: 40.75755460659445,
+         current_location_long: -73.9858318571167,
         },
 
-        {username: "second",
+        {username: "fakeUser2",
          password: hash, 
          email: "example@.net",
-         user_type_id: 1,              //diner
-         current_location_lat: 0,
-         current_location_long: 0,
+         current_location_lat: 40.75755460659445,
+         current_location_long: -73.9858318571167,
         },
 
-        {username: "third",
+        {username: "fakeUser3",
         password: hash, 
         email: "example@.net",
-        user_type_id: 2,               //operator
-        current_location_lat: 0,
-        current_location_long: 0,
+        current_location_lat: 40.75755460659445,
+        current_location_long: -73.9858318571167,
        },
 
-       {username: "fourth",
+       {username: "fakeUser4",
        password: hash, 
        email: "example@.net",
-       user_type_id: 2,                //operator
-       current_location_lat: 0,
-       current_location_long: 0,
+       current_location_lat: 40.75755460659445,
+       current_location_long: -73.9858318571167,
       }
     ]);
   };
