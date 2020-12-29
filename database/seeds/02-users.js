@@ -10,32 +10,32 @@ exports.seed = function(knex) {
          password: hash, 
          email: "example@.net",
          user_type_id: 1,              //diner
-         current_location_lat: "",
-         current_location_long: "",
+         current_location_lat: 0,
+         current_location_long: 0,
         },
 
         {username: "second",
          password: hash, 
          email: "example@.net",
          user_type_id: 1,              //diner
-         current_location_lat: "",
-         current_location_long: "",
+         current_location_lat: 0,
+         current_location_long: 0,
         },
 
         {username: "third",
         password: hash, 
         email: "example@.net",
         user_type_id: 2,               //operator
-        current_location_lat: "",
-        current_location_long: "",
+        current_location_lat: 0,
+        current_location_long: 0,
        },
 
        {username: "fourth",
        password: hash, 
        email: "example@.net",
        user_type_id: 2,                //operator
-       current_location_lat: "",
-       current_location_long: "",
+       current_location_lat: 0,
+       current_location_long: 0,
       }
     ]);
   };
