@@ -108,7 +108,7 @@ Send a GET request to the base URL. No headers or body is required for this test
     ```
     {
         "message": "Welcome to the API, ${username}",
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6Ik..."
+        "token": "sadkjADSkjaFsdD..."
     }
     ```
  
